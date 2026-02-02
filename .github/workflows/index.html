@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90s RADICAL BASH!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Mono+One&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --neon-pink: #ff00ff;
+          --neon-yellow: #ffff00;
+          --neon-cyan: #00ffff;
+          --deep-purple: #300030;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--deep-purple);
+            font-family: 'Tahoma', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+        .memphis-bg {
+            background-image: 
+                radial-gradient(circle at 2px 2px, var(--neon-pink) 1px, transparent 0);
+            background-size: 40px 40px;
+            background-color: var(--deep-purple);
+        }
+        .radical-border {
+            border: 4px solid white;
+            box-shadow: 8px 8px 0px var(--neon-pink), 16px 16px 0px var(--neon-cyan);
+        }
+        .marker-font { font-family: 'Permanent Marker', cursive; }
+        .heavy-font { font-family: 'Rubik Mono One', sans-serif; }
+        .pixel-font { font-family: 'VT323', monospace; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .floating { animation: float 4s ease-in-out infinite; }
+
+        .vhs-glitch {
+            text-shadow: 2px 0 var(--neon-cyan), -2px 0 var(--neon-pink);
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        .zigzag {
+            mask-image: linear-gradient(135deg, rgba(0,0,0,1) 25%, transparent 25%),
+                        linear-gradient(225deg, rgba(0,0,0,1) 25%, transparent 25%);
+            mask-size: 20px 40px;
+        }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--deep-purple); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-yellow); border: 2px solid var(--deep-purple); }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.3.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="memphis-bg">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
